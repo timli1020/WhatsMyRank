@@ -5,11 +5,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>What's My Rank</title>
+    {% block title %}
+    <title>What's My Rank {{ summoner_name }}</title>
+    {% endblock %}
   </head>
   <body>
     {% block body %}
-    <h1>{{ rank }}</h1>
+    <h1>{{ summoner_name }}</h1>
+    <h2>{{ solo_queue_tier }} {{ solo_queue_rank }} {{ solo_queue_lp }} LP</h2>
     <form action="">
       <input type="submit" value="Go Back" />
     </form>

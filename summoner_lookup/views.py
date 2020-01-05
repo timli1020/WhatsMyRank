@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from riotwatcher import RiotWatcher
+from .summoner_search import makeSearch
 # Create your views here.
 
 
@@ -16,13 +17,14 @@ def search(request):
         print('*'*50)
 
         summoner_name = request.POST.get('summoner_name', None)
-        apiKey = 'RGAPI-d507af1d-8a94-4cc7-a371-5ae2a971fde8'
-        watcher = RiotWatcher(apiKey)
         my_region = 'na1'
-        me = watcher.summoner.by_name(my_region, summoner_name)
-        id = me['id']
-        rank = watcher.league.by_summoner(my_region, id)
-        args = {'rank': rank[0]['tier']}
+
+        args = makeSearch(my_region, summoner_name)
+
+        print('*'*50)
+        print(args)
+        print('*'*50)
+
         return render(request, 'summoner_lookup/search.html', args)
 
     else:

@@ -2,7 +2,11 @@
 
 <!DOCTYPE html>
 <html lang="en">
-  <head> </head>
+  <head>
+    {% block title %}
+    <title>What's My Rank</title>
+    {% endblock %}
+  </head>
   <body>
     {% block body %}
     <form action="search/" method="POST">
