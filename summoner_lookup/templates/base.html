@@ -10,12 +10,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <style type="text/css">
+      .footer {
+        position: fixed;
+        text-align: center;
+        bottom: 0px;
+        width: 100%;
+      }
+    </style>
     {% block title %} {% endblock %}
   </head>
   <body>
     <div class="container">
       <h1>What's My Rank</h1>
       {% block body %} {% endblock %}
+    </div>
+    <div class="footer">
+      Made by Tim Li @ The University of Connecticut
     </div>
   </body>
 </html>

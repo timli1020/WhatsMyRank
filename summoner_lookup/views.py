@@ -17,6 +17,10 @@ def search(request):
         print('*'*50)
 
         summoner_name = request.POST.get('summoner_name', None)
+
+        if summoner_name == '':
+            return redirect('/')
+
         my_region = 'na1'
 
         args = makeSearch(my_region, summoner_name)
