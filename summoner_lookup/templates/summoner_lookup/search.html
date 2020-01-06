@@ -16,10 +16,14 @@
     <h2>
       SOLOQ: {{ solo_queue_tier }} {{ solo_queue_rank }} {{ solo_queue_lp }} LP
     </h2>
+    {% else %}
+    <h2>Unranked in SOLOQ</h2>
     {% endif %} {% if flex_queue_tier %}
     <h2>
       FLEXQ: {{ flex_queue_tier }} {{ flex_queue_rank }} {{flex_queue_lp }} LP
     </h2>
+    {% else %}
+    <h2>Unranked in FLEXQ</h2>
     {% endif %}
     <form action="">
       <input type="submit" value="Go Back" />

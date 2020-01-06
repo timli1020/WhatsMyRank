@@ -21,6 +21,9 @@ def search(request):
 
         args = makeSearch(my_region, summoner_name)
 
+        if args['summoner_name'] == 'No summoner with this name found':
+            return render(request, 'summoner_lookup/none.html')
+
         return render(request, 'summoner_lookup/search.html', args)
 
     else:
