@@ -12,7 +12,15 @@
   <body>
     {% block body %}
     <h1>{{ summoner_name }}</h1>
-    <h2>{{ solo_queue_tier }} {{ solo_queue_rank }} {{ solo_queue_lp }} LP</h2>
+    {% if solo_queue_tier %}
+    <h2>
+      SOLOQ: {{ solo_queue_tier }} {{ solo_queue_rank }} {{ solo_queue_lp }} LP
+    </h2>
+    {% endif %} {% if flex_queue_tier %}
+    <h2>
+      FLEXQ: {{ flex_queue_tier }} {{ flex_queue_rank }} {{flex_queue_lp }} LP
+    </h2>
+    {% endif %}
     <form action="">
       <input type="submit" value="Go Back" />
     </form>

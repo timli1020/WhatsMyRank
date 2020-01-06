@@ -21,10 +21,6 @@ def search(request):
 
         args = makeSearch(my_region, summoner_name)
 
-        print('*'*50)
-        print(args)
-        print('*'*50)
-
         return render(request, 'summoner_lookup/search.html', args)
 
     else:
