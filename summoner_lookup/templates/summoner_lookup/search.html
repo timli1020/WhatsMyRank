@@ -11,6 +11,10 @@
   </head>
   <body>
     {% block body %}
+    <img
+      src="http://ddragon.leagueoflegends.com/cdn/9.24.2/img/profileicon/{{ profile_icon }}.png"
+      alt=""
+    />
     <h1>{{ summoner_name }}</h1>
     {% if solo_queue_tier %}
     <h2>

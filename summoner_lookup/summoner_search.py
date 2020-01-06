@@ -18,6 +18,7 @@ def makeSearch(region, summonerName):
         print('*'*50)
 
         args = {'summoner_name': summoner['name'],
+                'profile_icon': summoner['profileIconId'],
                 'solo_queue_tier': None,
                 'solo_queue_rank': None,
                 'solo_queue_lp': None,
