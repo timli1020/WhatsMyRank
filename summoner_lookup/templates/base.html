@@ -17,12 +17,20 @@
         bottom: 0px;
         width: 100%;
       }
+      .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+      }
     </style>
     {% block title %} {% endblock %}
   </head>
   <body>
+    <div class="center">
+      {% block logo %} {% endblock %}
+    </div>
     <div class="container">
-      <h1>What's My Rank</h1>
       {% block body %} {% endblock %}
     </div>
     <div class="footer">

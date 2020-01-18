@@ -11,10 +11,23 @@ def makeSearch(region, summonerName):
         summoner = watcher.summoner.by_name(region, summonerName)
 
         id = summoner['id']
+        account_id = summoner['accountId']
         stats = watcher.league.by_summoner(region, id)
 
+        match_list_id = []
+        matches = watcher.match.matchlist_by_account('na1', account_id)
+
+        match_list = matches['matches']
+
+        matches = []
+
+        for match in match_list:
+            match_list_id.append(match['gameId'])
+
+        match = watcher.match.by_id('na1', match_list_id[0])
+
         print('*'*50)
-        print(summoner)
+        print(match)
         print('*'*50)
 
         args = {'summoner_name': summoner['name'],

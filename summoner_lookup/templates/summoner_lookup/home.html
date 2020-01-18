@@ -8,8 +8,20 @@
     {% endblock %}
   </head>
   <body>
-    {% block body %}
-    <form action="search/" method="POST">
+    {% block logo %}
+    <style type="text/css">
+      .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+      }
+    </style>
+    {% load static %}
+    <img src="{% static 'summoner_lookup/whatsmyranklogo2.jpg'%}" />
+
+    {% endblock %} {% block body %}
+    <form action="search/" method="POST" class="center">
       {% csrf_token %}
       <input type="text" name="summoner_name" />
       <input type="submit" value="Search" />
